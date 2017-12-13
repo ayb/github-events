@@ -10,6 +10,9 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 
+# for http queries
+gem 'typhoeus', '~> 1.3'
+
 # front end / UI
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails', '~> 4.3'
