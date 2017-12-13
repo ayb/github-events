@@ -1,0 +1,7 @@
+<% if more? %>
+  $("#load-more-from-rails a").prop("href", "<%= next_page_link %>");
+<% else %>
+  $("<%= j render partial: "end" %>").insertBefore("#load-more-from-rails");
+  $("#load-more-from-rails").remove();
+<% end %>
+$("<%= j render partial: "event", collection: @events %>").insertBefore("#load-more-from-rails");

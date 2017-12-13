@@ -26,7 +26,11 @@ class QueriesController < ApplicationController
   end
 
   def show
-
+    @query = Query.find_by_id(params[:id])
+    @events = @query.fetch(page_number)
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   def next_page_link
