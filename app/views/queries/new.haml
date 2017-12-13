@@ -1,0 +1,18 @@
+%h1 Query GitHub API Endpoints
+= form_for @query, remote: true, format: :js do |f|
+
+  %table
+    %tr
+      %th= f.label :owner
+      %th= f.label :repo
+      %th= f.label :event_type
+    %tr
+      %td= f.text_field :owner, class: "not-empty"
+      %td= f.text_field :repo, class: "not-empty"
+      %td= f.text_field :event_type, placeholder: "optional"
+    %tr
+      %td= f.submit "Query with Rails", id: "query-with-rails"
+      %td
+      %td= f.submit "Query with jQuery", id: "query-with-jquery"
+
+  %table#results
