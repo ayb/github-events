@@ -11,20 +11,6 @@ class QueriesController < ApplicationController
     return @query.save ? process_query : process_invalid
   end
 
-  def process_query
-    @events = @query.fetch
-    template = @events.present? ? "create" : "none"
-    respond_to do |format|
-      format.js { render action: template, layout: false }
-    end
-  end
-
-  def process_invalid
-    respond_to do |format|
-      format.js { render action: "invalid", layout: false }
-    end
-  end
-
   def show
     @query = Query.find_by_id(params[:id])
     @events = @query.fetch(page_number)
