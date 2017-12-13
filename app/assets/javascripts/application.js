@@ -18,4 +18,6 @@
 //= require ./github
 //= require ./github/form
 //= require ./github/pagination
+//= require ./github/queries
+//= require ./github/response
 //= require ./github/initializers

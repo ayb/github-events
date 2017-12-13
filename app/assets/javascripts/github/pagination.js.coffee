@@ -2,6 +2,8 @@ Github.Pagination =
 
   loading: false
 
+  pageNumber: 1
+
   withRails: ->
     Github.Pagination.loading = false
     $("#load-more-from-rails").on 'inview', (event, visible) ->
