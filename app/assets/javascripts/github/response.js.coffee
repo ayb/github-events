@@ -4,6 +4,8 @@ Github.Response =
 
   headerRow: "<tr><th>Who</th><th>What</th><th>When</th></tr>"
 
+  moreRow: "<tr id=\"load-more-with-jquery\"><td></td><td><a href=\"#\">Load More..</a></td><td></td></tr>"
+
   none: ->
     $("#load-more-with-jquery").remove()
     $("#results").append(Github.Response.emptyRow)
@@ -24,6 +26,13 @@ Github.Response =
     html += "</td></tr>"
     return html
 
+  append: (data) ->
+    load = $("#load-more-with-jquery")
+    area = $("#results")
+    $.each data, (index, row) ->
+      $(Github.Response.rowHtml(row)).insertBefore(load) unless Github.Response.shouldFilter(row)
+    load.remove() unless Github.Pagination.hasMore()
+
   render: (data) ->
     area = $("#results")
     html = Github.Response.headerRow
@@ -34,6 +43,8 @@ Github.Response =
         rows += 1
     if rows > 0
       area.html(html)
+      area.append(Github.Response.moreRow)
+      Github.Pagination.withjQuery()
     else
       Github.Response.none()
 
