@@ -15,4 +15,5 @@
 //= require jquery.inview
 //= require awesomplete
 //= require jquery.timeago
-//= require_tree .
+//= require ./github
+//= require ./github/pagination
