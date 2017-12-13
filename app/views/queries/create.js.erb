@@ -1,0 +1,5 @@
+$("#results").append('<%= j render partial: "header" %>');
+$("#results").append('<%= j render partial: "event", collection: @events %>');
+<% if more? %>
+  $("#results").append('<%= j render partial: "more" %>');
+<% end %>
