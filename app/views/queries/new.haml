@@ -9,7 +9,7 @@
     %tr
       %td= f.text_field :owner, class: "not-empty"
       %td= f.text_field :repo, class: "not-empty"
-      %td= f.text_field :event_type, placeholder: "optional"
+      %td= f.text_field :event_type, placeholder: "optional", class: "awesomplete", data: { list: @events }
     %tr
       %td= f.submit "Query with Rails", id: "query-with-rails"
       %td
