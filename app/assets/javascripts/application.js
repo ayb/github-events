@@ -16,4 +16,6 @@
 //= require awesomplete
 //= require jquery.timeago
 //= require ./github
+//= require ./github/form
 //= require ./github/pagination
+//= require ./github/initializers
