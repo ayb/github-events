@@ -11,4 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require jquery.inview
+//= require awesomplete
+//= require jquery.timeago
 //= require_tree .
